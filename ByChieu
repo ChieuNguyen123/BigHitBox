@@ -237,7 +237,7 @@ HideWarn.BackgroundTransparency = 1.000
 HideWarn.Position = UDim2.new(0.267689228, 0, 0.819727898, 0)
 HideWarn.Size = UDim2.new(0, 237, 0, 27)
 HideWarn.Font = Enum.Font.SourceSansBold
-HideWarn.Text = "Press Y to Hide/Show this Interface!"
+HideWarn.Text = "Press K to Hide/Show this Interface!"
 HideWarn.TextColor3 = Color3.fromRGB(255, 255, 255)
 HideWarn.TextScaled = true
 HideWarn.TextSize = 38.000
@@ -290,7 +290,7 @@ UIAspectRatioConstraint.AspectRatio = 1.736
 
 -- Scripts:
 
-local function CQPZII_fake_script() -- mainFrame.initialize 
+local function CQPZII_fake_script() -- mainFrame.initialize
 	local script = Instance.new('LocalScript', mainFrame)
 
 	local player = game:GetService("Players").LocalPlayer
@@ -302,44 +302,44 @@ local function CQPZII_fake_script() -- mainFrame.initialize
 	local hitboxBool = 3
 	local HitboxTra = 0.75
 	local HeadSize = 0
-	
+
 	local HitDistBtn = 10
 	local DistConfig = 30
-	
-	
+
+
 	game.Players.PlayerAdded:Connect(function(player)
 		--print(player.Name .. " Joined in the Server!")
 		player.CharacterAdded:Connect(function(character)
 			task.wait(5)
 			HitboxIncrease()
 		end)
-	
+
 	end)
-	
+
 	script.Parent.Labels.cre2.Text = "B".. "K ".. "T" .. "R" .. "O" .. "L" .. "L" .. "S" .. "D" .. "E" .. "V"
-	
-	
+
+
 	Buttons.HitboxDistance.MouseButton1Click:Connect(function()
-		
+
 		if HitDistBtn ~= 20 then
 			HitDistBtn += 1
 			DistConfig += 10
-			
+
 		else
 			HitDistBtn = 1
 			DistConfig = 10
 		end
-		
+
 		Buttons.HitboxDistance.Text = "Proximity-Based Hitbox Scaling: ".. DistConfig
 	end)
-	
+
 	Buttons.Close.MouseButton1Click:Connect(function()
 		mainFrame.Parent:Destroy()
 	end)
-	
+
 	Buttons.HitboxTransparency.MouseButton1Click:Connect(function()
 		if hitboxBool == 1 then
-			hitboxBool += 1 
+			hitboxBool += 1
 			HitboxTra = 0.25
 		elseif hitboxBool == 2 then
 			hitboxBool += 1
@@ -351,24 +351,24 @@ local function CQPZII_fake_script() -- mainFrame.initialize
 			hitboxBool = 1
 			HitboxTra = 1
 		end
-		
+
 		HitboxTransparency()
 	end)
-	
+
 	for _,v in pairs(HitBoxButtons:GetChildren()) do
 		if v:IsA("TextButton") then
 			v.MouseButton1Click:Connect(function()
-				
+
 				HeadSize = v.Name
 				HitboxIncrease()
 				script.Parent.Labels.cre2.Text = "B".. "K ".. "T" .. "R" .. "O" .. "L" .. "L" .. "S" .. "D" .. "E" .. "V"
 			end)
 		end
 	end
-	
-	
-		
-	
+
+
+
+
 	function HitboxIncrease()
 		local conn = RunService.Heartbeat:Connect(function()
 			for _,v in pairs(game:GetService("Players"):GetChildren()) do
@@ -381,12 +381,12 @@ local function CQPZII_fake_script() -- mainFrame.initialize
 							hrp.Size = Vector3.new(2,2,2)
 						else
 							hrp.Size = Vector3.new(HeadSize,HeadSize,HeadSize)
-						end		
+						end
 				end
 			end
 		end)
 	end
-	
+
 	function HitboxTransparency()
 			for _, others in ipairs(game.Players:GetPlayers()) do
 				local char = others.Character
@@ -397,9 +397,9 @@ local function CQPZII_fake_script() -- mainFrame.initialize
 				end
 			end
 	end
-	
-	
-	
+
+
+
 	UserInputService.InputBegan:Connect(function(input,gameprocess)
 		if gameprocess == true then return end
 		if input.KeyCode == Enum.KeyCode.K then
@@ -410,7 +410,7 @@ local function CQPZII_fake_script() -- mainFrame.initialize
 			end
 		end
 	end)
-	
+
 	HitboxIncrease()
 	HitboxTransparency()
 end
