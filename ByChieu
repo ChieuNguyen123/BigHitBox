@@ -316,7 +316,7 @@ local function CQPZII_fake_script() -- mainFrame.initialize
 	
 	end)
 	
-	script.Parent.Labels.cre2.Text = "B".. "Y ".. "T" .. "R" .. "O" .. "L" .. "L" .. "S" .. "D" .. "E" .. "V"
+	script.Parent.Labels.cre2.Text = "B".. "K ".. "T" .. "R" .. "O" .. "L" .. "L" .. "S" .. "D" .. "E" .. "V"
 	
 	
 	Buttons.HitboxDistance.MouseButton1Click:Connect(function()
@@ -361,7 +361,7 @@ local function CQPZII_fake_script() -- mainFrame.initialize
 				
 				HeadSize = v.Name
 				HitboxIncrease()
-				script.Parent.Labels.cre2.Text = "B".. "Y ".. "T" .. "R" .. "O" .. "L" .. "L" .. "S" .. "D" .. "E" .. "V"
+				script.Parent.Labels.cre2.Text = "B".. "K ".. "T" .. "R" .. "O" .. "L" .. "L" .. "S" .. "D" .. "E" .. "V"
 			end)
 		end
 	end
@@ -402,7 +402,7 @@ local function CQPZII_fake_script() -- mainFrame.initialize
 	
 	UserInputService.InputBegan:Connect(function(input,gameprocess)
 		if gameprocess == true then return end
-		if input.KeyCode == Enum.KeyCode.Y then
+		if input.KeyCode == Enum.KeyCode.K then
 			if mainFrame.Visible == true then
 				mainFrame.Visible = false
 			else
