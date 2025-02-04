@@ -34,7 +34,7 @@ local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 
 --Properties:
 
-trollsKit.Name = "trollsKit"
+trollsKit.Name = "Chieu"
 trollsKit.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 trollsKit.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 trollsKit.ResetOnSpawn = false
